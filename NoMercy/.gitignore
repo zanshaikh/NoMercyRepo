@@ -1,0 +1,7 @@
+No Mercy/Library
+No Mercy/Temp
+
+*.sln
+*.csproj
+*.unityproj
+*.userprefs

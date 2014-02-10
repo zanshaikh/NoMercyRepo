@@ -1,0 +1,45 @@
+using UnityEngine;
+using System.Collections;
+
+public class Person : MonoBehaviour {
+
+	Vector3 newPos = new Vector3(0f, 0f, 0f);
+	public float moveSpeed = 10f;
+	CharacterController controller;
+	public float jumpHeight = 1f;
+	public float gravity = -0.1f;
+
+	// Use this for initialization
+	void Start () {
+		controller = GetComponent<CharacterController>();
+		newPos.x = transform.localPosition.x;
+		newPos.y = transform.localPosition.y;
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		newPos.x = Input.GetAxis("Horizontal")*Time.deltaTime * moveSpeed;
+		//newPos.y += Input.GetAxis ("Vertical")*Time.deltaTime * moveSpeed;
+
+		if(Input.GetButtonUp("Jump"))
+		{
+			if(controller.isGrounded)
+			{
+				newPos.y += jumpHeight;
+				print ("Jumped!");
+			}
+
+		}
+
+		//if (!(controller.isGrounded)) {
+		//	newPos.y += gravity*Time.deltaTime;	
+		//}
+			
+		
+
+		//transform.localPosition = newPos;
+		controller.Move (newPos);
+	}
+
+
+}
