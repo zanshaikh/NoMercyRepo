@@ -100,6 +100,7 @@ public class BetaMovement : MonoBehaviour {
 		}
 		if (Input.GetButtonDown (v) && Input.GetAxis (v) < 0) {
 			animator.SetBool("isCrouch", true);
+
 			if((Input.GetAxis(h) != 0) && animator.GetBool("isCrouch"))
 			{
 				animator.SetBool("isCrouchWalk", true);

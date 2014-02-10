@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour {
 
-	CharacterController controller;
+	public CharacterController controller;
 	public float speed = 8f;
 	public int hp = 50;
 	// Use this for initialization
@@ -12,7 +12,10 @@ public class Enemy : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	public virtual void Update () {
+
+
+
 
 		if (hp <= 0) {
 			Destroy (this.gameObject);		
@@ -21,6 +24,14 @@ public class Enemy : MonoBehaviour {
 
 	public void loseHealth(int howMuchLost){
 		hp -= howMuchLost;
+	}
+
+	protected void Movement(float speed){
+
+	}
+
+	protected void Attack(int damage){
+
 	}
 
 

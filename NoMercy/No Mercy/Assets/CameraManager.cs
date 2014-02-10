@@ -43,7 +43,7 @@ public class CameraManager : MonoBehaviour {
 		cameraPos = (player.localPosition + player2.localPosition)/2.0f;
 		cameraPos.z = -15f;
 		transform.localPosition = cameraPos;
-		if(distance > 5 && distance < 10)
+		if(distance > 5 && distance < 8)
 			transform.camera.orthographicSize = distance;
 
 
